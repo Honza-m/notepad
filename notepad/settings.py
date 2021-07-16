@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 import dj_database_url
-import django_heroku
+import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdirp'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -147,4 +147,4 @@ REST_FRAMEWORK = {
     ],
 }
 
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
