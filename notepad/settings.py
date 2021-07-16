@@ -29,7 +29,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = ["https://honzuv-notepad.herokuapp.com/"]
+ALLOWED_HOSTS = ["honzuv-notepad.herokuapp.com"]
 if os.environ.get("DEBUG"):
     ALLOWED_HOSTS.append("localhost")
 
