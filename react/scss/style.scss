@@ -1,0 +1,20 @@
+@import "~normalize.css/normalize.css";
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+@import 'colors';
+
+// Reset defaults
+html, body, #react-root {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: $background;
+}
+
+@import 'login';
+@import 'loading';
+@import 'dashboard';

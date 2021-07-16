@@ -1,0 +1,158 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+
+    .user-info {
+        margin: 0.5rem;
+        padding: 0 0.5rem;
+
+        display: flex;
+        flex-direction: row;
+
+        div:nth-child(1) {
+            flex: 1;
+        }
+
+        a {
+            color: $text-dark;
+        }
+    }
+}
+
+.card {
+    width: 100%;
+
+    &-inner {
+        margin: 0.5rem;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px -5px;
+
+        div {
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    
+    .headline {
+        background: $bg-dark;
+        color: $text-light;
+        border-radius: 20px 20px 0 0;
+        height: 20px;
+        padding: .4rem 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .text {
+        background: $bg-light;
+        color: $text-dark;
+        border-radius: 0 0 20px 20px;
+        padding: 15px 20px;
+    }
+}
+
+.new-note {
+    transition: height 1s;
+    
+    display: flex;
+    flex-direction: column;
+    
+    position: absolute;
+    bottom: 0;
+    
+    height: 40px;
+    width: 100%;
+    overflow: hidden;
+
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px -5px 10px -5px;
+    background: $bg-light;
+    color: $text-dark;
+
+    &.open {
+        height: 98%;    
+    }
+
+    &-header {
+        height: 40px;
+        flex-shrink: 0;
+
+        display: flex;
+        flex-direction: row;
+
+        box-sizing: border-box;
+        border-radius: 20px 20px 0 0;
+            
+        & input {
+            box-sizing: border-box;
+            flex: 1;
+            height: 100%;
+            border: 0;
+            outline: none;
+            -webkit-appearance: none;
+            
+            padding: 10px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        & .close-buttons {
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+
+            &.open {
+                transition: opacity 1s;
+                opacity: 100%;
+                width: 20%;
+            }
+
+            &.closed {
+                transition: opacity 1s, width 1s linear 1s;
+                opacity: 0;
+                width: 0;
+            }
+
+            
+            .icon {
+                @extend %fa-icon;
+                @extend .fas;
+                font-size: 20px;
+                margin-right: 7px;
+                cursor: pointer;
+                
+                &.save:before {
+                    content: fa-content($fa-var-save);
+                }
+
+                &.delete:before {
+                    content: fa-content($fa-var-trash-alt);
+                }
+            }
+        }
+    }
+
+    &-body {
+        flex-grow: 1;
+        width: 100%;
+        border-top: 1px solid black;
+
+        & textarea {
+            outline: none;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            resize: none;
+            border: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+    }   
+}
